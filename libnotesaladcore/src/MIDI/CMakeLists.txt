@@ -1,0 +1,35 @@
+target_sources(notesaladcore
+    INTERFACE
+        BasicVoiceAllocator.h
+        IMIDIDriver.h
+        INoteManager.h
+        IToneGenerator.h
+        IVoiceAllocator.h
+        LFO.cpp
+        LFO.h
+        MIDICommon.h
+        MIDIDriver.h
+        MIDIParser.cpp
+        MIDIParser.h
+        MonoNoteManager.cpp
+        MonoNoteManager.h
+        ParamInfo.g.cpp
+        ParamInfo.h
+        Patch.h
+        PatchManagerBase.h
+        PatchParams.cpp
+        PatchParams.h
+        PatchSerialization.h
+        PolyNoteManager.h
+        RAMPatchManager.h
+        SysEx.cpp
+        SysEx.h
+        TimeSource.h
+        ToneController.h
+        VoiceStatus.cpp
+        VoiceStatus.h
+)
+
+add_subdirectory(OPL)
+add_subdirectory(OPM)
+add_subdirectory(SD1)

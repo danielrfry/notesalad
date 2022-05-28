@@ -1,0 +1,11 @@
+target_sources(notesaladcore
+    INTERFACE
+        SD1DeviceBase.cpp
+        SD1DeviceBase.h
+        SD1OPLAdaptor.cpp
+        SD1OPLAdaptor.h
+        SD1Tone.cpp
+        SD1Tone.h
+        SD1Utils.cpp
+        SD1Utils.h
+)

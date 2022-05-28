@@ -1,0 +1,26 @@
+{
+    "name": "notesalad",
+    "version": "0.7.0",
+    "description": "Device-independent MIDI implementation and software synthesizer",
+    "private": true,
+    "main": "dist/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "CMAKE_BUILD_TYPE=Release npm run build-common",
+        "build-debug": "CMAKE_BUILD_TYPE=Debug npm run build-common",
+        "build-common": "mkdir -p dist && npm run build-wasm && node_modules/.bin/webpack --config worklet.webpack.config.js && cp src/index.js dist/",
+        "build-wasm": "unset NODE && mkdir -p build/wasm && cd build/wasm && emcmake cmake -DWASM=1 -DCMAKE_BUILD_TYPE=$CMAKE_BUILD_TYPE ../../.. && emmake make -j 8"
+    },
+    "author": "Dan Fry",
+    "license": "BSD-3-Clause",
+    "devDependencies": {
+        "prettier": "^1.19.1",
+        "webpack": "^5.24.2",
+        "webpack-cli": "^4.9.2"
+    },
+    "files": [
+        "src/*.js",
+        "dist/*.js"
+    ],
+    "dependencies": {}
+}

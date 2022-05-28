@@ -1,0 +1,787 @@
+[
+  {
+    "id": 0,
+    "path": "bo",
+    "description": "Basic octave",
+    "shortDesc": "Octave",
+    "range": [
+      0,
+      3
+    ],
+    "default": 1
+  },
+  {
+    "id": 1,
+    "path": "lfo",
+    "description": "LFO frequency",
+    "shortDesc": "LFO freq",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 2,
+    "path": "alg",
+    "description": "Algorithm",
+    "shortDesc": "Algorithm",
+    "range": [
+      0,
+      7
+    ],
+    "default": 0
+  },
+  {
+    "id": 32,
+    "path": "operators[0].sr",
+    "description": "Operator 1 sustain rate",
+    "shortDesc": "Op 1 sustain",
+    "range": [
+      0,
+      15
+    ],
+    "default": 0
+  },
+  {
+    "id": 33,
+    "path": "operators[0].xof",
+    "description": "Operator 1 ignore keyoff",
+    "shortDesc": "Op 1 XOF",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 34,
+    "path": "operators[0].ksr",
+    "description": "Operator 1 key scale sensitivity",
+    "shortDesc": "Op 1 KSR",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 35,
+    "path": "operators[0].rr",
+    "description": "Operator 1 release rate",
+    "shortDesc": "Op 1 release",
+    "range": [
+      0,
+      15
+    ],
+    "default": 15
+  },
+  {
+    "id": 36,
+    "path": "operators[0].dr",
+    "description": "Operator 1 decay rate",
+    "shortDesc": "Op 1 decay",
+    "range": [
+      0,
+      15
+    ],
+    "default": 0
+  },
+  {
+    "id": 37,
+    "path": "operators[0].ar",
+    "description": "Operator 1 attack rate",
+    "shortDesc": "Op 1 attack",
+    "range": [
+      0,
+      15
+    ],
+    "default": 15
+  },
+  {
+    "id": 38,
+    "path": "operators[0].sl",
+    "description": "Operator 1 sustain level",
+    "shortDesc": "Op 1 sus level",
+    "range": [
+      0,
+      15
+    ],
+    "default": 15
+  },
+  {
+    "id": 39,
+    "path": "operators[0].tl",
+    "description": "Operator 1 total level",
+    "shortDesc": "Op 1 level",
+    "range": [
+      0,
+      63
+    ],
+    "default": 63,
+    "invert": true
+  },
+  {
+    "id": 40,
+    "path": "operators[0].ksl",
+    "description": "Operator 1 key scaling level",
+    "shortDesc": "Op 1 KSL",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 41,
+    "path": "operators[0].dam",
+    "description": "Operator 1 amplitude modulation depth",
+    "shortDesc": "Op 1 AM depth",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 42,
+    "path": "operators[0].eam",
+    "description": "Operator 1 enable amplitude modulation",
+    "shortDesc": "Op 1 AM enable",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 43,
+    "path": "operators[0].dvb",
+    "description": "Operator 1 vibrato depth",
+    "shortDesc": "Op 1 vib depth",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 44,
+    "path": "operators[0].evb",
+    "description": "Operator 1 enable vibrato",
+    "shortDesc": "Op 1 vib enable",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 45,
+    "path": "operators[0].multi",
+    "description": "Operator 1 frequency multiplier",
+    "shortDesc": "Op 1 mult",
+    "range": [
+      0,
+      15
+    ],
+    "default": 1
+  },
+  {
+    "id": 46,
+    "path": "operators[0].dt",
+    "description": "Operator 1 detune",
+    "shortDesc": "Op 1 detune",
+    "range": [
+      0,
+      7
+    ],
+    "default": 0
+  },
+  {
+    "id": 47,
+    "path": "operators[0].ws",
+    "description": "Operator 1 wave shape",
+    "shortDesc": "Op 1 wave",
+    "range": [
+      0,
+      31
+    ],
+    "default": 0
+  },
+  {
+    "id": 48,
+    "path": "operators[0].fb",
+    "description": "Operator 1 feedback",
+    "shortDesc": "Op 1 feedback",
+    "range": [
+      0,
+      7
+    ],
+    "default": 0
+  },
+  {
+    "id": 64,
+    "path": "operators[1].sr",
+    "description": "Operator 2 sustain rate",
+    "shortDesc": "Op 2 sustain",
+    "range": [
+      0,
+      15
+    ],
+    "default": 0
+  },
+  {
+    "id": 65,
+    "path": "operators[1].xof",
+    "description": "Operator 2 ignore keyoff",
+    "shortDesc": "Op 2 XOF",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 66,
+    "path": "operators[1].ksr",
+    "description": "Operator 2 key scale sensitivity",
+    "shortDesc": "Op 2 KSR",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 67,
+    "path": "operators[1].rr",
+    "description": "Operator 2 release rate",
+    "shortDesc": "Op 2 release",
+    "range": [
+      0,
+      15
+    ],
+    "default": 15
+  },
+  {
+    "id": 68,
+    "path": "operators[1].dr",
+    "description": "Operator 2 decay rate",
+    "shortDesc": "Op 2 decay",
+    "range": [
+      0,
+      15
+    ],
+    "default": 0
+  },
+  {
+    "id": 69,
+    "path": "operators[1].ar",
+    "description": "Operator 2 attack rate",
+    "shortDesc": "Op 2 attack",
+    "range": [
+      0,
+      15
+    ],
+    "default": 15
+  },
+  {
+    "id": 70,
+    "path": "operators[1].sl",
+    "description": "Operator 2 sustain level",
+    "shortDesc": "Op 2 sus level",
+    "range": [
+      0,
+      15
+    ],
+    "default": 15
+  },
+  {
+    "id": 71,
+    "path": "operators[1].tl",
+    "description": "Operator 2 total level",
+    "shortDesc": "Op 2 level",
+    "range": [
+      0,
+      63
+    ],
+    "default": 0,
+    "invert": true
+  },
+  {
+    "id": 72,
+    "path": "operators[1].ksl",
+    "description": "Operator 2 key scaling level",
+    "shortDesc": "Op 2 KSL",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 73,
+    "path": "operators[1].dam",
+    "description": "Operator 2 amplitude modulation depth",
+    "shortDesc": "Op 2 AM depth",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 74,
+    "path": "operators[1].eam",
+    "description": "Operator 2 enable amplitude modulation",
+    "shortDesc": "Op 2 AM enable",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 75,
+    "path": "operators[1].dvb",
+    "description": "Operator 2 vibrato depth",
+    "shortDesc": "Op 2 vib depth",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 76,
+    "path": "operators[1].evb",
+    "description": "Operator 2 enable vibrato",
+    "shortDesc": "Op 2 vib enable",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 77,
+    "path": "operators[1].multi",
+    "description": "Operator 2 frequency multiplier",
+    "shortDesc": "Op 2 mult",
+    "range": [
+      0,
+      15
+    ],
+    "default": 1
+  },
+  {
+    "id": 78,
+    "path": "operators[1].dt",
+    "description": "Operator 2 detune",
+    "shortDesc": "Op 2 detune",
+    "range": [
+      0,
+      7
+    ],
+    "default": 0
+  },
+  {
+    "id": 79,
+    "path": "operators[1].ws",
+    "description": "Operator 2 wave shape",
+    "shortDesc": "Op 2 wave",
+    "range": [
+      0,
+      31
+    ],
+    "default": 0
+  },
+  {
+    "id": 80,
+    "path": "operators[1].fb",
+    "description": "Operator 2 feedback",
+    "shortDesc": "Op 2 feedback",
+    "range": [
+      0,
+      7
+    ],
+    "default": 0
+  },
+  {
+    "id": 96,
+    "path": "operators[2].sr",
+    "description": "Operator 3 sustain rate",
+    "shortDesc": "Op 3 sustain",
+    "range": [
+      0,
+      15
+    ],
+    "default": 0
+  },
+  {
+    "id": 97,
+    "path": "operators[2].xof",
+    "description": "Operator 3 ignore keyoff",
+    "shortDesc": "Op 3 XOF",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 98,
+    "path": "operators[2].ksr",
+    "description": "Operator 3 key scale sensitivity",
+    "shortDesc": "Op 3 KSR",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 99,
+    "path": "operators[2].rr",
+    "description": "Operator 3 release rate",
+    "shortDesc": "Op 3 release",
+    "range": [
+      0,
+      15
+    ],
+    "default": 15
+  },
+  {
+    "id": 100,
+    "path": "operators[2].dr",
+    "description": "Operator 3 decay rate",
+    "shortDesc": "Op 3 decay",
+    "range": [
+      0,
+      15
+    ],
+    "default": 0
+  },
+  {
+    "id": 101,
+    "path": "operators[2].ar",
+    "description": "Operator 3 attack rate",
+    "shortDesc": "Op 3 attack",
+    "range": [
+      0,
+      15
+    ],
+    "default": 15
+  },
+  {
+    "id": 102,
+    "path": "operators[2].sl",
+    "description": "Operator 3 sustain level",
+    "shortDesc": "Op 3 sus level",
+    "range": [
+      0,
+      15
+    ],
+    "default": 15
+  },
+  {
+    "id": 103,
+    "path": "operators[2].tl",
+    "description": "Operator 3 total level",
+    "shortDesc": "Op 3 level",
+    "range": [
+      0,
+      63
+    ],
+    "default": 63,
+    "invert": true
+  },
+  {
+    "id": 104,
+    "path": "operators[2].ksl",
+    "description": "Operator 3 key scaling level",
+    "shortDesc": "Op 3 KSL",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 105,
+    "path": "operators[2].dam",
+    "description": "Operator 3 amplitude modulation depth",
+    "shortDesc": "Op 3 AM depth",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 106,
+    "path": "operators[2].eam",
+    "description": "Operator 3 enable amplitude modulation",
+    "shortDesc": "Op 3 AM enable",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 107,
+    "path": "operators[2].dvb",
+    "description": "Operator 3 vibrato depth",
+    "shortDesc": "Op 3 vib depth",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 108,
+    "path": "operators[2].evb",
+    "description": "Operator 3 enable vibrato",
+    "shortDesc": "Op 3 vib enable",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 109,
+    "path": "operators[2].multi",
+    "description": "Operator 3 frequency multiplier",
+    "shortDesc": "Op 3 mult",
+    "range": [
+      0,
+      15
+    ],
+    "default": 1
+  },
+  {
+    "id": 110,
+    "path": "operators[2].dt",
+    "description": "Operator 3 detune",
+    "shortDesc": "Op 3 detune",
+    "range": [
+      0,
+      7
+    ],
+    "default": 0
+  },
+  {
+    "id": 111,
+    "path": "operators[2].ws",
+    "description": "Operator 3 wave shape",
+    "shortDesc": "Op 3 wave",
+    "range": [
+      0,
+      31
+    ],
+    "default": 0
+  },
+  {
+    "id": 112,
+    "path": "operators[2].fb",
+    "description": "Operator 3 feedback",
+    "shortDesc": "Op 3 feedback",
+    "range": [
+      0,
+      7
+    ],
+    "default": 0
+  },
+  {
+    "id": 128,
+    "path": "operators[3].sr",
+    "description": "Operator 4 sustain rate",
+    "shortDesc": "Op 4 sustain",
+    "range": [
+      0,
+      15
+    ],
+    "default": 0
+  },
+  {
+    "id": 129,
+    "path": "operators[3].xof",
+    "description": "Operator 4 ignore keyoff",
+    "shortDesc": "Op 4 XOF",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 130,
+    "path": "operators[3].ksr",
+    "description": "Operator 4 key scale sensitivity",
+    "shortDesc": "Op 4 KSR",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 131,
+    "path": "operators[3].rr",
+    "description": "Operator 4 release rate",
+    "shortDesc": "Op 4 release",
+    "range": [
+      0,
+      15
+    ],
+    "default": 15
+  },
+  {
+    "id": 132,
+    "path": "operators[3].dr",
+    "description": "Operator 4 decay rate",
+    "shortDesc": "Op 4 decay",
+    "range": [
+      0,
+      15
+    ],
+    "default": 0
+  },
+  {
+    "id": 133,
+    "path": "operators[3].ar",
+    "description": "Operator 4 attack rate",
+    "shortDesc": "Op 4 attack",
+    "range": [
+      0,
+      15
+    ],
+    "default": 15
+  },
+  {
+    "id": 134,
+    "path": "operators[3].sl",
+    "description": "Operator 4 sustain level",
+    "shortDesc": "Op 4 sus level",
+    "range": [
+      0,
+      15
+    ],
+    "default": 15
+  },
+  {
+    "id": 135,
+    "path": "operators[3].tl",
+    "description": "Operator 4 total level",
+    "shortDesc": "Op 4 level",
+    "range": [
+      0,
+      63
+    ],
+    "default": 63,
+    "invert": true
+  },
+  {
+    "id": 136,
+    "path": "operators[3].ksl",
+    "description": "Operator 4 key scaling level",
+    "shortDesc": "Op 4 KSL",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 137,
+    "path": "operators[3].dam",
+    "description": "Operator 4 amplitude modulation depth",
+    "shortDesc": "Op 4 AM depth",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 138,
+    "path": "operators[3].eam",
+    "description": "Operator 4 enable amplitude modulation",
+    "shortDesc": "Op 4 AM enable",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 139,
+    "path": "operators[3].dvb",
+    "description": "Operator 4 vibrato depth",
+    "shortDesc": "Op 4 vib depth",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 140,
+    "path": "operators[3].evb",
+    "description": "Operator 4 enable vibrato",
+    "shortDesc": "Op 4 vib enable",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 141,
+    "path": "operators[3].multi",
+    "description": "Operator 4 frequency multiplier",
+    "shortDesc": "Op 4 mult",
+    "range": [
+      0,
+      15
+    ],
+    "default": 1
+  },
+  {
+    "id": 142,
+    "path": "operators[3].dt",
+    "description": "Operator 4 detune",
+    "shortDesc": "Op 4 detune",
+    "range": [
+      0,
+      7
+    ],
+    "default": 0
+  },
+  {
+    "id": 143,
+    "path": "operators[3].ws",
+    "description": "Operator 4 wave shape",
+    "shortDesc": "Op 4 wave",
+    "range": [
+      0,
+      31
+    ],
+    "default": 0
+  },
+  {
+    "id": 144,
+    "path": "operators[3].fb",
+    "description": "Operator 4 feedback",
+    "shortDesc": "Op 4 feedback",
+    "range": [
+      0,
+      7
+    ],
+    "default": 0
+  }
+]

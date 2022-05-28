@@ -1,0 +1,9 @@
+target_sources(notesaladcore
+    INTERFACE
+        OPMMIDISystem.cpp
+        OPMMIDISystem.h
+        OPMParamInfo.g.cpp
+        OPMParamInfo.h
+        OPMToneGenerator.cpp
+        OPMToneGenerator.h
+)

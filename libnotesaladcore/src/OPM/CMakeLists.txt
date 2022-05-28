@@ -1,0 +1,13 @@
+target_sources(notesaladcore
+    INTERFACE
+        BufferedOPMDevice.cpp
+        BufferedOPMDevice.h
+        OPMDeviceBase.cpp
+        OPMDeviceBase.h
+        OPMRegisterSet.cpp
+        OPMRegisterSet.h
+        OPMTone.cpp
+        OPMTone.h
+        OPMUtils.cpp
+        OPMUtils.h
+)

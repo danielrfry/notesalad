@@ -1,0 +1,19 @@
+target_sources(notesaladcore
+    INTERFACE
+        DefaultOPLPatchManager.cpp
+        DefaultOPLPatchManager.h
+        OPL2MIDISystem.cpp
+        OPL2MIDISystem.h
+        OPL2VoiceAllocator.cpp
+        OPL2VoiceAllocator.h
+        OPL3MIDISystem.cpp
+        OPL3MIDISystem.h
+        OPL3VoiceAllocator.cpp
+        OPL3VoiceAllocator.h
+        OPLGMPatchData.cpp
+        OPLGMPatchData.h
+        OPLParamInfo.g.cpp
+        OPLParamInfo.h
+        OPLToneGenerator.cpp
+        OPLToneGenerator.h
+)
