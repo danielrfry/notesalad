@@ -6,6 +6,8 @@ _If you're looking for a quick and simple way to try out the MIDI implementation
 
 Note Salad parses a MIDI data stream and drives a hardware or software synthesizer by calling abstract methods to start/stop sounds and set synth parameters on individual monophonic channels. It handles channel allocation and basic patch management, and provides software LFOs and mapping of MIDI controls to synth parameters.
 
+**This code should be considered experimental**. It's a hobby project that I hadn't originally intended to release, with fun taking priority over code quality or documentation. There will be plenty of rough edges.
+
 ## Components
 
 ### In this repository
@@ -17,10 +19,6 @@ Note Salad parses a MIDI data stream and drives a hardware or software synthesiz
 
 - **[Note Salad Editor](https://github.com/danielrfry/notesalad-editor/)**: GUI patch editor and software synthesizer web app for OPL, OPM and SD-1. Browser based, requiring no additional hardware or software installation.
 - **[Note Salad Tools](https://github.com/danielrfry/notesalad-tools/)**: a collection of tools written in Python for converting, 'disassembling' and editing VGM/DRO files, converting MIDI to VGM, playing or rendering VGM/MID files to WAV etc. using **libnotesalad**.
-
-## Status
-
-This code should be considered **experimental**. It's a hobby project that I hadn't originally intended to release, with fun taking priority over code quality or documentation. There will be plenty of rough edges.
 
 ## Building libnotesalad for Linux/macOS
 
