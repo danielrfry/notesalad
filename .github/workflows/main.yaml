@@ -1,7 +1,8 @@
 name: Build & Test
 on: push
 jobs:
-  build:
+  build-desktop:
+    name: Build & test desktop
     runs-on: ubuntu-20.04
     steps:
       - name: Check out
@@ -14,3 +15,23 @@ jobs:
         run: cd build && make -j `nproc --all`
       - name: Test
         run: cd build && make -j `nproc --all` libnotesaladcore_test && ctest
+  build-web:
+    name: Build web
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out notesalad
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          path: notesalad
+      - name: Check out emsdk
+        uses: actions/checkout@v3
+        with:
+          repository: emscripten-core/emsdk
+          path: emsdk
+      - name: Install latest emsdk
+        run: cd emsdk && ./emsdk install latest
+      - name: Activate latest emsdk
+        run: cd esmdk && ./emsdk activate latest
+      - name: Build npm package
+        run: cd notesalad/web && npm install && npm run build
