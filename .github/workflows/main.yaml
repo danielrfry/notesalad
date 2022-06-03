@@ -1,0 +1,16 @@
+name: Build & Test
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+      - name: Configure
+        run: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release ..
+      - name: Build
+        run: cd build && make -j `nproc --all`
+      - name: Test
+        run: cd build && make -j `nproc --all` libnotesaladcore_test && ctest
