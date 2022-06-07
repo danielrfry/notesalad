@@ -2,7 +2,6 @@
     "name": "@danielrfry/notesalad",
     "version": "0.7.0",
     "description": "Device-independent MIDI implementation and software synthesizer",
-    "private": true,
     "repository": "git://github.com/danielrfry/notesalad.git",
     "main": "dist/index.js",
     "scripts": {
