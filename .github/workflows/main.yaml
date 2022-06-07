@@ -35,3 +35,5 @@ jobs:
         run: cd emsdk && ./emsdk activate latest
       - name: Build npm package
         run: source emsdk/emsdk_env.sh && cd notesalad/web && npm install && npm run build
+      - name: Publish npm package
+        run: cd notesalad/web && npm publish
