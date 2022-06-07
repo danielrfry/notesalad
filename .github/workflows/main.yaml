@@ -35,5 +35,7 @@ jobs:
         run: cd emsdk && ./emsdk activate latest
       - name: Build npm package
         run: source emsdk/emsdk_env.sh && cd notesalad/web && npm install && npm run build
+      - name: Set up npmrc
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
       - name: Publish npm package
         run: cd notesalad/web && npm publish
