@@ -138,11 +138,11 @@ uint8_t OPLTone::getCarriers(uint8_t carriers[])
             carriers[0] = 3;
             return 1;
         case 1:
-            carriers[0] = 1;
+            carriers[0] = 0;
             carriers[1] = 3;
             return 2;
         case 2:
-            carriers[0] = 0;
+            carriers[0] = 1;
             carriers[1] = 3;
             return 2;
         case 3:
