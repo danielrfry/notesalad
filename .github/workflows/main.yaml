@@ -1,10 +1,10 @@
 name: Build & Test
 on:
-  push
+  push:
   workflow_dispatch:
     inputs:
       publish_npm_pkg:
-        description: 'Publish NPM package'
+        description: "Publish NPM package"
         required: true
         default: false
 jobs:
