@@ -1,5 +1,12 @@
 name: Build & Test
-on: push
+on:
+  push
+  workflow_dispatch:
+    inputs:
+      publish_npm_pkg:
+        description: 'Publish NPM package'
+        required: true
+        default: false
 jobs:
   build-desktop:
     name: Build & test desktop
@@ -39,3 +46,4 @@ jobs:
         run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
       - name: Publish npm package
         run: cd notesalad/web && npm publish
+        if: ${{ github.event.inputs.publish_npm_pkg }}
