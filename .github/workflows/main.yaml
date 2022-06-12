@@ -1,0 +1,49 @@
+name: Build & Test
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      publish_npm_pkg:
+        description: "Publish NPM package"
+        required: true
+        default: false
+jobs:
+  build-desktop:
+    name: Build & test desktop
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+      - name: Configure
+        run: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release ..
+      - name: Build
+        run: cd build && make -j `nproc --all`
+      - name: Test
+        run: cd build && make -j `nproc --all` libnotesaladcore_test && ctest
+  build-web:
+    name: Build web
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out notesalad
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          path: notesalad
+      - name: Check out emsdk
+        uses: actions/checkout@v3
+        with:
+          repository: emscripten-core/emsdk
+          path: emsdk
+      - name: Install latest emsdk
+        run: cd emsdk && ./emsdk install latest
+      - name: Activate latest emsdk
+        run: cd emsdk && ./emsdk activate latest
+      - name: Build npm package
+        run: source emsdk/emsdk_env.sh && cd notesalad/web && npm install && npm run build
+      - name: Set up npmrc
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
+      - name: Publish npm package
+        run: cd notesalad/web && npm publish
+        if: ${{ github.event.inputs.publish_npm_pkg }}
