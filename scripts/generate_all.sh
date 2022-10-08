@@ -17,6 +17,4 @@ PARAMINFO_DIR="../resources/params"
 ./codegen/gen_param_info_cpp.py -i OPMParamInfo.h -n OPM_PARAMS_INFO "$PARAMINFO_DIR/opm.json" ../libnotesaladcore/src/MIDI/OPM/OPMParamInfo.g.cpp
 ./codegen/gen_param_info_cpp.py -i SD1ParamInfo.h -n SD1_PARAMS_INFO "$PARAMINFO_DIR/sd1.json" ../libnotesaladcore/src/MIDI/SD1/SD1ParamInfo.g.cpp
 
-./gensd1patchescpp.py -i SD1GMPatchData.h -n SD1::GM_PATCH_DATA ../resources/patches/SD-1/MA-3_GM.json ../libnotesaladcore/src/MIDI/SD1/SD1GMPatchData.g.cpp
-
 ./doc/gen_params_md.py 
