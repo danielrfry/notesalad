@@ -1,3 +1,7 @@
+"""Device-independent MIDI implementation"""
+
+__version__ = "0.5.0"
+
 from ctypes import c_int, cdll, CFUNCTYPE, c_bool, c_void_p, c_ushort, c_ubyte, c_uint
 import sys
 
