@@ -41,6 +41,14 @@ params = [
         "shortDesc": "Glide",
         "range": [0, 16383],
         "default": 0
+    },
+    {
+        "id": 0x2004,
+        "path": "velocityDepth",
+        "description": "Velocity depth",
+        "shortDesc": "Velocity depth",
+        "range": [0, 0x7f],
+        "default": 0x7f
     }
 ]
 

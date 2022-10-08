@@ -45,6 +45,17 @@
     "default": 0
   },
   {
+    "id": 8196,
+    "path": "velocityDepth",
+    "description": "Velocity depth",
+    "shortDesc": "Velocity depth",
+    "range": [
+      0,
+      127
+    ],
+    "default": 127
+  },
+  {
     "id": 12288,
     "path": "paramMaps[0].src",
     "description": "Map 1 source",

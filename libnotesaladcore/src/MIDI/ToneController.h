@@ -23,6 +23,7 @@ typedef struct ToneControllerChannelStatus {
 typedef struct ToneControllerVoiceStatus {
     uint8_t noteNum = 0;
     uint8_t velocity = 127;
+    uint8_t noteVolume = 127;
     float pitch = 0;
     Milliseconds noteStartTime = 0;
     LFO lfos[NUM_LFOS];
@@ -84,6 +85,7 @@ public:
         voiceStatus.noteStartTime = this->timeSource->timeMS;
         this->resetVoiceLFOs(voice);
         auto patchParams = this->getVoiceParams(channel, voice);
+        voiceStatus.noteVolume = this->getNoteVolume(velocity, patchParams.velocityDepth);
         this->updateVoiceTone(channel, voice, patchParams);
         pitch = this->getVoicePitch(channel, voice, patchParams);
         this->toneGenerator->noteOn(voice, pitch);
@@ -183,9 +185,9 @@ private:
 
     uint8_t getVolumeForVoice(uint8_t channel, uint8_t voice)
     {
-        uint8_t volume = this->channelStatus[channel].volume;
-        uint8_t velocity = this->voiceStatus[voice].velocity;
-        return (velocity * volume) / 127;
+        uint8_t channelVolume = this->channelStatus[channel].volume;
+        uint8_t noteVolume = this->voiceStatus[voice].noteVolume;
+        return (channelVolume * noteVolume) / 127;
     }
 
     PatchParams<Tone> getVoiceParams(uint8_t channel, uint8_t voice)
@@ -317,5 +319,10 @@ private:
         for (uint8_t i = 0; i < NUM_LFOS; i++) {
             this->voiceStatus[voice].lfos[i].reset();
         }
+    }
+
+    uint8_t getNoteVolume(uint8_t velocity, uint8_t velocityDepth)
+    {
+        return 127 - (((127 - velocity) * velocityDepth) / 127);
     }
 };

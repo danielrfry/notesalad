@@ -6,6 +6,7 @@
 #define PATCH_PARAM_FIXEDNOTENUM 0x2001
 #define PATCH_PARAM_PITCHOFFSET 0x2002
 #define PATCH_PARAM_GLIDEDURATION 0x2003
+#define PATCH_PARAM_VELOCITYDEPTH 0x2004
 
 #define POLYMODE_POLY 0x00
 #define POLYMODE_MONO 0x01
@@ -26,6 +27,7 @@ public:
     uint8_t fixedNoteNum = 0;
     uint16_t pitchOffset = 0x2000;
     uint16_t glideDurationMS = 0;
+    uint8_t velocityDepth = 0x7f;
 
     uint16_t getParam(uint16_t paramID)
     {
@@ -38,6 +40,8 @@ public:
             return this->pitchOffset;
         case PATCH_PARAM_GLIDEDURATION:
             return this->glideDurationMS;
+        case PATCH_PARAM_VELOCITYDEPTH:
+            return this->velocityDepth;
         default:
             return tone.getParam(paramID);
         }
@@ -57,6 +61,8 @@ public:
         case PATCH_PARAM_GLIDEDURATION:
             this->glideDurationMS = value;
             break;
+        case PATCH_PARAM_VELOCITYDEPTH:
+            this->velocityDepth = value;
         default:
             tone.setParam(paramID, value);
         }

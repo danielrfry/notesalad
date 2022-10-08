@@ -82,6 +82,7 @@
 | 8193  | 0x2001 | Fixed note number       | 0-127   |
 | 8194  | 0x2002 | Pitch offset            | 0-16383 |
 | 8195  | 0x2003 | Glide duration (ms)     | 0-16383 |
+| 8196  | 0x2004 | Velocity depth          | 0-127   |
 | 12288 | 0x3000 | Map 1 source            | 0-255   |
 | 12289 | 0x3001 | Map 1 destination       | 0-16383 |
 | 12290 | 0x3002 | Map 1 adjustment amount | 0-16383 |

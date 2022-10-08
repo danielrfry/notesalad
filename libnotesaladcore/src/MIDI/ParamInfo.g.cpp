@@ -5,6 +5,7 @@ const ParamInfo UNIVERSAL_PARAMS_INFO_ITEMS[] = {
     { 0x2001, 0 }, // Note num
     { 0x2002, 8192 }, // Pitch offset
     { 0x2003, 0 }, // Glide
+    { 0x2004, 127 }, // Velocity depth
     { 0x3000, 255 }, // Map 1 src
     { 0x3001, 0 }, // Map 1 dest
     { 0x3002, 8192 }, // Map 1 amount
@@ -27,4 +28,4 @@ const ParamInfo UNIVERSAL_PARAMS_INFO_ITEMS[] = {
     { 0x3113, 0 }, // LFO 2 one shot
 };
 
-const ParamInfoList UNIVERSAL_PARAMS_INFO = { 24, UNIVERSAL_PARAMS_INFO_ITEMS };
+const ParamInfoList UNIVERSAL_PARAMS_INFO = { 25, UNIVERSAL_PARAMS_INFO_ITEMS };
