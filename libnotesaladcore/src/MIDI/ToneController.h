@@ -249,6 +249,10 @@ private:
             }
         }
 
+        if (map.src == PARAMMAP_SRC_VELOCITY) {
+            return this->voiceStatus[voice].velocity / 127.0f;
+        }
+
         return 0;
     }
 
