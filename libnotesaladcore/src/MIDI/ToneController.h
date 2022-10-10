@@ -7,8 +7,6 @@
 #include "PatchManagerBase.h"
 #include "TimeSource.h"
 
-#include <cstdio>
-
 typedef struct ToneControllerChannelStatus {
     uint8_t bank = 0;
     uint8_t program = 0;
@@ -214,6 +212,9 @@ private:
             if (map.src != PARAMMAP_SRC_NONE) {
                 int32_t value = patch.getParam(map.destParam);
                 float mapSrcValue = this->getMapSrcValue(channel, voice, patch, i);
+                if (getBit<PARAMMAP_FLAG_INVERT_SRC>(map.flags)) {
+                    mapSrcValue = 1.0f - mapSrcValue;
+                }
                 int32_t adjustment = (int32_t)(map.adjustmentAmount * mapSrcValue);
                 value = clamp<int32_t>(value + adjustment, 0, UINT16_MAX);
                 patch.setParam(map.destParam, value);

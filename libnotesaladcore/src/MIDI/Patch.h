@@ -18,6 +18,9 @@
 #define PARAMMAP_PARAM_SRC 0
 #define PARAMMAP_PARAM_DESTPARAM 1
 #define PARAMMAP_PARAM_ADJUST_AMOUNT 2
+#define PARAMMAP_PARAM_INVERT_SRC 3
+
+#define PARAMMAP_FLAG_INVERT_SRC 1
 
 #define LFO_PARAM_START 0x3100
 #define LFO_PARAM_END 0x31ff
@@ -31,6 +34,7 @@ typedef struct ParamMap {
     uint8_t src = PARAMMAP_SRC_NONE;
     uint16_t destParam = 0;
     int16_t adjustmentAmount = 0;
+    uint8_t flags = 0;
 } ParamMap;
 
 typedef struct LFOParams {
@@ -103,6 +107,8 @@ private:
             return this->paramMaps[paramMapIndex].destParam;
         case PARAMMAP_PARAM_ADJUST_AMOUNT:
             return this->paramMaps[paramMapIndex].adjustmentAmount + 0x2000;
+        case PARAMMAP_PARAM_INVERT_SRC:
+            return this->paramMaps[paramMapIndex].flags & PARAMMAP_FLAG_INVERT_SRC ? 1 : 0;
         default:
             return 0;
         }
@@ -124,6 +130,9 @@ private:
             break;
         case PARAMMAP_PARAM_ADJUST_AMOUNT:
             this->paramMaps[paramMapIndex].adjustmentAmount = clamp<uint16_t>(value, 0, 0x3fff) - 0x2000;
+            break;
+        case PARAMMAP_PARAM_INVERT_SRC:
+            setBit<PARAMMAP_FLAG_INVERT_SRC>(this->paramMaps[paramMapIndex].flags, value != 0);
             break;
         }
     }
