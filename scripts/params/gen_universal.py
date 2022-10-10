@@ -85,7 +85,7 @@ def map_params(m):
         },
         {
             "id": id_base + 3,
-            "path": f"{p_prefix}.invertSource",
+            "path": f"{p_prefix}.invertSrc",
             "description": f"{d_prefix} invert source",
             "shortDesc": f"{d_prefix} invert",
             "range": [0, 1],

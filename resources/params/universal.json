@@ -91,7 +91,7 @@
   },
   {
     "id": 12291,
-    "path": "paramMaps[0].invertSource",
+    "path": "paramMaps[0].invertSrc",
     "description": "Map 1 invert source",
     "shortDesc": "Map 1 invert",
     "range": [
@@ -136,7 +136,7 @@
   },
   {
     "id": 12307,
-    "path": "paramMaps[1].invertSource",
+    "path": "paramMaps[1].invertSrc",
     "description": "Map 2 invert source",
     "shortDesc": "Map 2 invert",
     "range": [
@@ -181,7 +181,7 @@
   },
   {
     "id": 12323,
-    "path": "paramMaps[2].invertSource",
+    "path": "paramMaps[2].invertSrc",
     "description": "Map 3 invert source",
     "shortDesc": "Map 3 invert",
     "range": [
@@ -226,7 +226,7 @@
   },
   {
     "id": 12339,
-    "path": "paramMaps[3].invertSource",
+    "path": "paramMaps[3].invertSrc",
     "description": "Map 4 invert source",
     "shortDesc": "Map 4 invert",
     "range": [
