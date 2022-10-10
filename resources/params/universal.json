@@ -90,6 +90,17 @@
     "zeroOffset": 8192
   },
   {
+    "id": 12291,
+    "path": "paramMaps[0].invertSource",
+    "description": "Map 1 invert source",
+    "shortDesc": "Map 1 invert",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
     "id": 12304,
     "path": "paramMaps[1].src",
     "description": "Map 2 source",
@@ -122,6 +133,17 @@
     ],
     "default": 8192,
     "zeroOffset": 8192
+  },
+  {
+    "id": 12307,
+    "path": "paramMaps[1].invertSource",
+    "description": "Map 2 invert source",
+    "shortDesc": "Map 2 invert",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
   },
   {
     "id": 12320,
@@ -158,6 +180,17 @@
     "zeroOffset": 8192
   },
   {
+    "id": 12323,
+    "path": "paramMaps[2].invertSource",
+    "description": "Map 3 invert source",
+    "shortDesc": "Map 3 invert",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
     "id": 12336,
     "path": "paramMaps[3].src",
     "description": "Map 4 source",
@@ -190,6 +223,17 @@
     ],
     "default": 8192,
     "zeroOffset": 8192
+  },
+  {
+    "id": 12339,
+    "path": "paramMaps[3].invertSource",
+    "description": "Map 4 invert source",
+    "shortDesc": "Map 4 invert",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
   },
   {
     "id": 12544,

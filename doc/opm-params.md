@@ -64,15 +64,19 @@
 | 12288 | 0x3000 | Map 1 source            | 0-255   |
 | 12289 | 0x3001 | Map 1 destination       | 0-16383 |
 | 12290 | 0x3002 | Map 1 adjustment amount | 0-16383 |
+| 12291 | 0x3003 | Map 1 invert source     | 0-1     |
 | 12304 | 0x3010 | Map 2 source            | 0-255   |
 | 12305 | 0x3011 | Map 2 destination       | 0-16383 |
 | 12306 | 0x3012 | Map 2 adjustment amount | 0-16383 |
+| 12307 | 0x3013 | Map 2 invert source     | 0-1     |
 | 12320 | 0x3020 | Map 3 source            | 0-255   |
 | 12321 | 0x3021 | Map 3 destination       | 0-16383 |
 | 12322 | 0x3022 | Map 3 adjustment amount | 0-16383 |
+| 12323 | 0x3023 | Map 3 invert source     | 0-1     |
 | 12336 | 0x3030 | Map 4 source            | 0-255   |
 | 12337 | 0x3031 | Map 4 destination       | 0-16383 |
 | 12338 | 0x3032 | Map 4 adjustment amount | 0-16383 |
+| 12339 | 0x3033 | Map 4 invert source     | 0-1     |
 | 12544 | 0x3100 | LFO 1 wave              | 0-4     |
 | 12545 | 0x3101 | LFO 1 period (ms)       | 0-16383 |
 | 12546 | 0x3102 | LFO 1 sync              | 0-1     |

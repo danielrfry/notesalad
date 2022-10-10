@@ -82,6 +82,14 @@ def map_params(m):
             "range": [0, 0x3fff],
             "default": 0x2000,
             "zeroOffset": 0x2000
+        },
+        {
+            "id": id_base + 3,
+            "path": f"{p_prefix}.invertSource",
+            "description": f"{d_prefix} invert source",
+            "shortDesc": f"{d_prefix} invert",
+            "range": [0, 1],
+            "default": 0
         }
     ]
 
