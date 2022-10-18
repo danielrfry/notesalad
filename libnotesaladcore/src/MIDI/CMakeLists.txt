@@ -13,6 +13,7 @@ target_sources(notesaladcore
         MIDIParser.h
         MonoNoteManager.cpp
         MonoNoteManager.h
+        ParamIDs.h
         ParamInfo.g.cpp
         ParamInfo.h
         Patch.h

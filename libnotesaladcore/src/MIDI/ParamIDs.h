@@ -1,0 +1,37 @@
+#pragma once
+
+// Device-independent parameter IDs
+
+// General patch parameters
+#define PARAM_POLYMODE 0x2000
+#define PARAM_FIXEDNOTENUM 0x2001
+#define PARAM_PITCHOFFSET 0x2002
+#define PARAM_GLIDEDURATION 0x2003
+#define PARAM_VELOCITYDEPTH 0x2004
+
+#define POLYMODE_POLY 0x00
+#define POLYMODE_MONO 0x01
+#define POLYMODE_MONO_EXT 0x02
+#define POLYMODE_LEGATO 0x03
+#define POLYMODE_LEGATO_EXT 0x04
+
+// Parameter map parameters
+#define PARAM_PARAMMAP_START 0x3000
+#define PARAM_PARAMMAP_END 0x30ff
+
+#define PARAM_PARAMMAP_SRC 0
+#define PARAM_PARAMMAP_DESTPARAM 1
+#define PARAM_PARAMMAP_ADJUST_AMOUNT 2
+#define PARAM_PARAMMAP_INVERT_SRC 3
+
+#define PARAMMAP_SRC_NONE 255
+#define PARAMMAP_SRC_VELOCITY 192
+
+// LFO parameters
+#define PARAM_LFO_START 0x3100
+#define PARAM_LFO_END 0x31ff
+
+#define PARAM_LFO_WAVE 0
+#define PARAM_LFO_PERIOD 1
+#define PARAM_LFO_SYNC 2
+#define PARAM_LFO_ONESHOT 3

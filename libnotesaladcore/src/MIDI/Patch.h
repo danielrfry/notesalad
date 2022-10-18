@@ -9,26 +9,7 @@
 #define NUM_PARAM_MAPS 4
 #define NUM_LFOS 2
 
-#define PARAMMAP_SRC_NONE 255
-#define PARAMMAP_SRC_VELOCITY 192
-
-#define PARAMMAP_PARAM_START 0x3000
-#define PARAMMAP_PARAM_END 0x30ff
-
-#define PARAMMAP_PARAM_SRC 0
-#define PARAMMAP_PARAM_DESTPARAM 1
-#define PARAMMAP_PARAM_ADJUST_AMOUNT 2
-#define PARAMMAP_PARAM_INVERT_SRC 3
-
 #define PARAMMAP_FLAG_INVERT_SRC 1
-
-#define LFO_PARAM_START 0x3100
-#define LFO_PARAM_END 0x31ff
-
-#define LFO_PARAM_WAVE 0
-#define LFO_PARAM_PERIOD 1
-#define LFO_PARAM_SYNC 2
-#define LFO_PARAM_ONESHOT 3
 
 typedef struct ParamMap {
     uint8_t src = PARAMMAP_SRC_NONE;
@@ -72,24 +53,24 @@ public:
     }
     static bool isParamMapParam(uint16_t paramID)
     {
-        return (paramID >= PARAMMAP_PARAM_START) && (paramID <= PARAMMAP_PARAM_END);
+        return (paramID >= PARAM_PARAMMAP_START) && (paramID <= PARAM_PARAMMAP_END);
     }
     static bool isLFOParam(uint16_t paramID)
     {
-        return (paramID >= LFO_PARAM_START) && (paramID <= LFO_PARAM_END);
+        return (paramID >= PARAM_LFO_START) && (paramID <= PARAM_LFO_END);
     }
 
 private:
     void getParamMapIndex(uint16_t paramID, uint8_t& paramMapIndex, uint8_t& paramMapItem)
     {
-        paramMapIndex = (paramID - PARAMMAP_PARAM_START) / 0x10;
-        paramMapItem = (paramID - PARAMMAP_PARAM_START) % 0x10;
+        paramMapIndex = (paramID - PARAM_PARAMMAP_START) / 0x10;
+        paramMapItem = (paramID - PARAM_PARAMMAP_START) % 0x10;
     }
 
     void getLFOIndex(uint16_t paramID, uint8_t& lfoIndex, uint8_t& lfoItem)
     {
-        lfoIndex = (paramID - LFO_PARAM_START) / 0x10;
-        lfoItem = (paramID - LFO_PARAM_START) % 0x10;
+        lfoIndex = (paramID - PARAM_LFO_START) / 0x10;
+        lfoItem = (paramID - PARAM_LFO_START) % 0x10;
     }
 
     uint16_t getParamMapParam(uint16_t paramID)
@@ -101,13 +82,13 @@ private:
             return 0;
 
         switch (paramMapItem) {
-        case PARAMMAP_PARAM_SRC:
+        case PARAM_PARAMMAP_SRC:
             return this->paramMaps[paramMapIndex].src;
-        case PARAMMAP_PARAM_DESTPARAM:
+        case PARAM_PARAMMAP_DESTPARAM:
             return this->paramMaps[paramMapIndex].destParam;
-        case PARAMMAP_PARAM_ADJUST_AMOUNT:
+        case PARAM_PARAMMAP_ADJUST_AMOUNT:
             return this->paramMaps[paramMapIndex].adjustmentAmount + 0x2000;
-        case PARAMMAP_PARAM_INVERT_SRC:
+        case PARAM_PARAMMAP_INVERT_SRC:
             return this->paramMaps[paramMapIndex].flags & PARAMMAP_FLAG_INVERT_SRC ? 1 : 0;
         default:
             return 0;
@@ -122,16 +103,16 @@ private:
             return;
 
         switch (paramMapItem) {
-        case PARAMMAP_PARAM_SRC:
+        case PARAM_PARAMMAP_SRC:
             this->paramMaps[paramMapIndex].src = clamp<uint16_t>(value, 0, 255);
             break;
-        case PARAMMAP_PARAM_DESTPARAM:
+        case PARAM_PARAMMAP_DESTPARAM:
             this->paramMaps[paramMapIndex].destParam = clamp<uint16_t>(value, 0, 0x3fff);
             break;
-        case PARAMMAP_PARAM_ADJUST_AMOUNT:
+        case PARAM_PARAMMAP_ADJUST_AMOUNT:
             this->paramMaps[paramMapIndex].adjustmentAmount = clamp<uint16_t>(value, 0, 0x3fff) - 0x2000;
             break;
-        case PARAMMAP_PARAM_INVERT_SRC:
+        case PARAM_PARAMMAP_INVERT_SRC:
             setBit<PARAMMAP_FLAG_INVERT_SRC>(this->paramMaps[paramMapIndex].flags, value != 0);
             break;
         }
@@ -145,11 +126,11 @@ private:
         }
 
         switch (lfoItem) {
-        case LFO_PARAM_WAVE:
+        case PARAM_LFO_WAVE:
             return this->lfoParams[lfoIndex].wave;
-        case LFO_PARAM_PERIOD:
+        case PARAM_LFO_PERIOD:
             return this->lfoParams[lfoIndex].period;
-        case LFO_PARAM_SYNC:
+        case PARAM_LFO_SYNC:
             return this->lfoParams[lfoIndex].sync ? 1 : 0;
         }
         return 0;
@@ -164,16 +145,16 @@ private:
         }
 
         switch (lfoItem) {
-        case LFO_PARAM_WAVE:
+        case PARAM_LFO_WAVE:
             this->lfoParams[lfoIndex].wave = clamp<uint16_t>(value, 0, LFO_WAVE_MAX);
             break;
-        case LFO_PARAM_PERIOD:
+        case PARAM_LFO_PERIOD:
             this->lfoParams[lfoIndex].period = value;
             break;
-        case LFO_PARAM_SYNC:
+        case PARAM_LFO_SYNC:
             this->lfoParams[lfoIndex].sync = (value != 0);
             break;
-        case LFO_PARAM_ONESHOT:
+        case PARAM_LFO_ONESHOT:
             this->lfoParams[lfoIndex].oneShot = (value != 0);
             break;
         }
