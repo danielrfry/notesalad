@@ -16,6 +16,7 @@
 #define SYSEX_CMD_READPATCH_REPLY 0x08
 #define SYSEX_CMD_WRITEPATCH 0x09
 #define SYSEX_CMD_WRITEPATCH_REPLY 0x0a
+#define SYSEX_CMD_SETDRUMMODE 0x0b
 
 #define SYSEX_DEV_ID_OPL2 0x01
 #define SYSEX_DEV_ID_OPL3 0x02
@@ -185,6 +186,18 @@ struct PACKED WritePatchReplyContent {
 
 struct PACKED WritePatchReplyMsg : SysExMsg<WritePatchReplyContent> {
     WritePatchReplyMsg(uint8_t resultCode);
+};
+
+// ----------------------------------------------------------------------------
+
+struct PACKED SetDrumModeContent {
+    uint8_t drumModeAndChannel;
+};
+
+struct PACKED SetDrumModeMsg : SysExMsg<SetDrumModeContent> {
+    SetDrumModeMsg(uint8_t channel, bool drumMode);
+    uint8_t getChannel();
+    bool getDrumMode();
 };
 
 }

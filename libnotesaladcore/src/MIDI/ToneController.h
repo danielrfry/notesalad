@@ -16,6 +16,7 @@ typedef struct ToneControllerChannelStatus {
     uint16_t iPitchWheelRange = 0x100;
     float fPitchWheelRange = 2.0f;
     LFO lfos[NUM_LFOS];
+    bool isDrumChannel = false;
 } ToneControllerChannelStatus;
 
 typedef struct ToneControllerVoiceStatus {
@@ -48,14 +49,15 @@ public:
             this->patchManager->getPatch(0, 0, 0xff, this->channelPatches[c]);
             this->clearParamMapCCValues(c);
         }
+        this->channelStatus[DRUM_CHANNEL].isDrumChannel = true;
         for (uint8_t v = 0; v < voices; v++) {
             this->voiceStatus[v] = ToneControllerVoiceStatus();
         }
     }
     bool getNotePatch(uint8_t channel, uint8_t noteNum, Patch<Tone>& outPatch)
     {
-        if (channel == DRUM_CHANNEL && this->patchManager->supportsDrums()) {
-            auto& channelStatus = this->channelStatus[channel];
+        auto& channelStatus = this->channelStatus[channel];
+        if (channelStatus.isDrumChannel && this->patchManager->supportsDrums()) {
             return this->patchManager->getPatch(channelStatus.bank, channelStatus.program, noteNum, outPatch);
         } else {
             outPatch = this->channelPatches[channel];
@@ -68,7 +70,7 @@ public:
     }
     uint8_t getChannelPolyMode(uint8_t channel)
     {
-        if (channel == DRUM_CHANNEL) {
+        if (this->channelStatus[channel].isDrumChannel) {
             return POLYMODE_POLY;
         } else {
             return this->channelPatches[channel].params.polyMode;
@@ -164,6 +166,10 @@ public:
             }
         }
     }
+    void setChannelDrumMode(uint8_t channel, bool isDrumChannel)
+    {
+        this->channelStatus[channel].isDrumChannel = isDrumChannel;
+    }
     void update()
     {
         for (uint8_t ch = 0; ch < 16; ch++) {
@@ -191,7 +197,7 @@ private:
     PatchParams<Tone> getVoiceParams(uint8_t channel, uint8_t voice)
     {
         Patch<Tone> patch;
-        if (channel == DRUM_CHANNEL && this->patchManager->supportsDrums()) {
+        if (this->channelStatus[channel].isDrumChannel && this->patchManager->supportsDrums()) {
             auto& voiceStatus = this->voiceStatus[voice];
             this->getNotePatch(channel, voiceStatus.noteNum, patch);
         } else {

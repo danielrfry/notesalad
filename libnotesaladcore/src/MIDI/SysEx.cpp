@@ -108,3 +108,19 @@ SysEx::WritePatchReplyMsg::WritePatchReplyMsg(uint8_t resultCode)
     header.cmd = SYSEX_CMD_WRITEPATCH_REPLY;
     content.resultCode = resultCode;
 }
+
+SysEx::SetDrumModeMsg::SetDrumModeMsg(uint8_t channel, bool drumMode)
+{
+    header.cmd = SYSEX_CMD_SETDRUMMODE;
+    content.drumModeAndChannel = (channel & 0x0f) | (drumMode ? 0x40 : 0);
+}
+
+uint8_t SysEx::SetDrumModeMsg::getChannel()
+{
+    return content.drumModeAndChannel & 0x0f;
+}
+
+bool SysEx::SetDrumModeMsg::getDrumMode()
+{
+    return (content.drumModeAndChannel & 0x40) != 0;
+}

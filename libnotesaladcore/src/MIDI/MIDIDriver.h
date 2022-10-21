@@ -130,6 +130,9 @@ public:
         case SYSEX_CMD_WRITEPATCH:
             this->sysExWritePatch(data, length);
             break;
+        case SYSEX_CMD_SETDRUMMODE:
+            this->sysExSetDrumMode(data, length);
+            break;
         }
     }
     virtual void pitchWheel(uint8_t channel, uint16_t value)
@@ -395,5 +398,16 @@ private:
     {
         auto reply = SysEx::WritePatchReplyMsg(resultCode);
         this->sendMIDI(&reply, sizeof(reply));
+    }
+    void sysExSetDrumMode(uint8_t* msgData, uint32_t length)
+    {
+        if (length == sizeof(SysEx::SetDrumModeMsg)) {
+            auto msg = (SysEx::SetDrumModeMsg*)msgData;
+            auto channel = msg->getChannel();
+            auto drumMode = msg->getDrumMode();
+            if (channel < 16) {
+                this->toneController.setChannelDrumMode(channel, drumMode);
+            }
+        }
     }
 };
