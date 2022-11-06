@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 if (WASM)
     message(STATUS "Setting compilation target to WASM")
-    add_executable(notesalad ${FM_SOURCES})
+    add_executable(notesalad)
     set_target_properties(notesalad PROPERTIES OUTPUT_NAME libnotesalad)
     set_target_properties(notesalad
         PROPERTIES LINK_FLAGS "\
@@ -58,7 +58,7 @@ if (WASM)
             -s RESERVED_FUNCTION_POINTERS=20"
     )
 else()
-    add_library(notesalad SHARED ${FM_SOURCES})
+    add_library(notesalad SHARED)
 endif()
 
 target_sources(notesalad
@@ -95,15 +95,19 @@ target_sources(notesalad
         opm.h
         sd1.cpp
         sd1.h
-        ymfm/src/ymfm_opl.cpp
-        ymfm/src/ymfm_pcm.cpp
-        ymfm/src/ymfm_adpcm.cpp
-        ymfm/src/ymfm_opm.cpp
 )
 
 add_subdirectory(resampler)
 
-target_link_libraries(notesalad PUBLIC notesaladcore)
+add_library(ymfm STATIC
+    ymfm/src/ymfm_opl.cpp
+    ymfm/src/ymfm_pcm.cpp
+    ymfm/src/ymfm_adpcm.cpp
+    ymfm/src/ymfm_opm.cpp
+)
+target_compile_options(ymfm PRIVATE -Wno-deprecated-declarations)
+
+target_link_libraries(notesalad PUBLIC notesaladcore ymfm)
 target_include_directories(notesalad
     INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}
 )
