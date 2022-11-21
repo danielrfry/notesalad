@@ -107,12 +107,27 @@ void OPLReadWriteDeviceBase::writeTone(uint8_t voice, OPLTone& tone)
 void OPLReadWriteDeviceBase::enableVoice(uint8_t voice)
 {
     if (!this->isVoiceEnabled(voice)) {
-        uint8_t ch4Op = OPL::getVoice4OpChannel(voice);
-        uint8_t channels[2];
-        OPL::get2OpChannelsFor4OpChannel(ch4Op, &channels[0]);
-        this->setChannelKeyOn(channels[0], false);
-        this->setChannelKeyOn(channels[1], false);
+        if (!OPL::isVoice4Op(voice)) {
+            // When switching from 4-op to 2-op mode, set the release rate of all the constituent
+            // operators to the maximum and set key off on both 2-op channels to stop all sound
+            uint8_t ch2Op = OPL::getVoice2OpChannel(voice);
+            uint8_t ch4Op = OPL::get4OpChannelFor2OpChannel(ch2Op);
+            if (ch4Op != 255) {
+                uint8_t channels2Op[2];
+                OPL::get2OpChannelsFor4OpChannel(ch4Op, &channels2Op[0]);
+                for (uint8_t c = 0; c < 2; c++) {
+                    uint16_t regOffsets[2];
+                    OPL::get2OpRegOffsets(channels2Op[c], &regOffsets[0]);
+                    this->write(0x80 + regOffsets[0], 0x0f);
+                    this->write(0x80 + regOffsets[1], 0x0f);
 
+                    uint8_t channelRegOffset = OPL::get2OpChannelRegOffset(channels2Op[c]);
+                    this->write(0xb0 + channelRegOffset, 0);
+                }
+            }
+        }
+
+        uint8_t ch4Op = OPL::getVoice4OpChannel(voice);
         this->set4OpChannelEnabled(ch4Op, OPL::isVoice4Op(voice));
     }
 }
