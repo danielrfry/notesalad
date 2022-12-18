@@ -218,7 +218,7 @@ private:
             if (map.src != PARAMMAP_SRC_NONE) {
                 int32_t value = patch.getParam(map.destParam);
                 float mapSrcValue = this->getMapSrcValue(channel, voice, patch, i);
-                if (getBit<PARAMMAP_FLAG_INVERT_SRC>(map.flags)) {
+                if (getFlag<PARAMMAP_FLAG_INVERT_SRC>(map.flags)) {
                     mapSrcValue = 1.0f - mapSrcValue;
                 }
                 int32_t adjustment = (int32_t)(map.adjustmentAmount * mapSrcValue);
