@@ -7,6 +7,18 @@
 
 #define PACKED __attribute__((__packed__))
 
+template <uint8_t flag>
+inline bool getFlag(uint8_t data)
+{
+    return (data & flag) != 0;
+}
+
+template <uint8_t flags>
+inline void setFlags(uint8_t& data, bool value)
+{
+    data = (data & ~flags) | (value ? value & flags : 0);
+}
+
 template <uint8_t bit>
 inline bool getBit(uint8_t data)
 {
@@ -22,7 +34,7 @@ inline uint8_t getBits(uint8_t data)
 template <uint8_t bit>
 inline void setBit(uint8_t& data, bool value)
 {
-    data = (data & ~(1 << bit)) | ((value & 1) << bit);
+    setFlags<1 << bit>(data, value);
 }
 
 template <uint8_t start, uint8_t count>

@@ -89,7 +89,7 @@ private:
         case PARAM_PARAMMAP_ADJUST_AMOUNT:
             return this->paramMaps[paramMapIndex].adjustmentAmount + 0x2000;
         case PARAM_PARAMMAP_INVERT_SRC:
-            return this->paramMaps[paramMapIndex].flags & PARAMMAP_FLAG_INVERT_SRC ? 1 : 0;
+            return getFlag<PARAMMAP_FLAG_INVERT_SRC>(this->paramMaps[paramMapIndex].flags) ? 1 : 0;
         default:
             return 0;
         }
@@ -113,7 +113,7 @@ private:
             this->paramMaps[paramMapIndex].adjustmentAmount = clamp<uint16_t>(value, 0, 0x3fff) - 0x2000;
             break;
         case PARAM_PARAMMAP_INVERT_SRC:
-            setBit<PARAMMAP_FLAG_INVERT_SRC>(this->paramMaps[paramMapIndex].flags, value != 0);
+            setFlags<PARAMMAP_FLAG_INVERT_SRC>(this->paramMaps[paramMapIndex].flags, value != 0);
             break;
         }
     }
