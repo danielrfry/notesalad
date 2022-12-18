@@ -120,44 +120,41 @@ TEST(Encoding7BitTest, Calculates7BitDecodedSize)
     EXPECT_EQ(get7BitDecodedSize(586), 512);
 }
 
-void hexDump(char* output, const uint8_t* input, size_t len)
+std::string hexDump(const uint8_t* input, size_t len)
 {
+    char buffer[3 * len + 1];
     for (size_t i = 0; i < len; i++) {
-        sprintf(output, "%02x ", input[i]);
-        output += 3;
+        snprintf(&buffer[i * 3], 4, "%02x ", input[i]);
     }
+    return std::string(buffer);
 }
 
 TEST(Encoding7BitTest, Encodes7Bit)
 {
     const uint8_t input[] = { 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef };
     const uint8_t expectedOutput[] = { 0x07, 0x01, 0x23, 0x45, 0x67, 0x09, 0x2b, 0x4d, 0x40, 0x6f };
-    char expectedOutputStr[31];
     uint8_t output[10];
-    char outputStr[31];
 
     bool result = encode7Bit(&input[0], 8, &output[0], 10);
 
-    hexDump(&expectedOutputStr[0], &expectedOutput[0], 10);
-    hexDump(&outputStr[0], &output[0], 10);
+    std::string expectedOutputStr = hexDump(&expectedOutput[0], 10);
+    std::string outputStr = hexDump(&output[0], 10);
 
     EXPECT_TRUE(result);
-    EXPECT_STREQ(expectedOutputStr, outputStr);
+    EXPECT_EQ(expectedOutputStr, outputStr);
 }
 
 TEST(Encoding7BitTest, Decodes7Bit)
 {
     const uint8_t input[] = { 0x07, 0x01, 0x23, 0x45, 0x67, 0x09, 0x2b, 0x4d, 0x40, 0x6f };
     const uint8_t expectedOutput[] = { 0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef };
-    char expectedOutputStr[25];
     uint8_t output[8];
-    char outputStr[25];
 
     bool result = decode7Bit(&input[0], 10, &output[0], 8);
 
-    hexDump(&expectedOutputStr[0], &expectedOutput[0], 8);
-    hexDump(&outputStr[0], &output[0], 8);
+    std::string expectedOutputStr = hexDump(&expectedOutput[0], 8);
+    std::string outputStr = hexDump(&output[0], 8);
 
     EXPECT_TRUE(result);
-    EXPECT_STREQ(expectedOutputStr, outputStr);
+    EXPECT_EQ(expectedOutputStr, outputStr);
 }
