@@ -26,4 +26,18 @@ TYPED_TEST_P(ParamInfoTest, MatchesDefaultToneData)
     }
 }
 
-REGISTER_TYPED_TEST_SUITE_P(ParamInfoTest, MatchesDefaultToneData);
+TYPED_TEST_P(ParamInfoTest, GetsAndSetsParams)
+{
+    TypeParam tone;
+    const ParamInfoList* paramInfoList = getParamInfoList<TypeParam>();
+    for (uint16_t i = 0; i < paramInfoList->numParams; i++) {
+        auto& paramInfo = paramInfoList->paramInfo[i];
+        auto paramID = paramInfo.id;
+        auto newValue = paramInfo.defaultValue == 0 ? 1 : paramInfo.defaultValue - 1;
+        tone.setParam(paramID, newValue);
+        auto readValue = tone.getParam(paramID);
+        EXPECT_EQ(readValue, newValue) << "Failed to get/set parameter: " << std::showbase << std::hex << paramID;
+    }
+}
+
+REGISTER_TYPED_TEST_SUITE_P(ParamInfoTest, MatchesDefaultToneData, GetsAndSetsParams);
