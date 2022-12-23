@@ -16,7 +16,7 @@ inline bool getFlag(uint8_t data)
 template <uint8_t flags>
 inline void setFlags(uint8_t& data, bool value)
 {
-    data = (data & ~flags) | (value ? value & flags : 0);
+    data = (data & ~flags) | (value ? flags : 0);
 }
 
 template <uint8_t bit>

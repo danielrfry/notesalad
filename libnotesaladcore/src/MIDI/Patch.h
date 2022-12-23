@@ -132,6 +132,8 @@ private:
             return this->lfoParams[lfoIndex].period;
         case PARAM_LFO_SYNC:
             return this->lfoParams[lfoIndex].sync ? 1 : 0;
+        case PARAM_LFO_ONESHOT:
+            return this->lfoParams[lfoIndex].oneShot ? 1 : 0;
         }
         return 0;
     }
