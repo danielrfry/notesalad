@@ -1,0 +1,326 @@
+[
+  {
+    "id": 8192,
+    "path": "polyMode",
+    "description": "Polyphony mode",
+    "shortDesc": "Poly mode",
+    "range": [
+      0,
+      4
+    ],
+    "default": 0
+  },
+  {
+    "id": 8193,
+    "path": "fixedNoteNum",
+    "description": "Fixed note number",
+    "shortDesc": "Note num",
+    "range": [
+      0,
+      127
+    ],
+    "default": 0
+  },
+  {
+    "id": 8194,
+    "path": "pitchOffset",
+    "description": "Pitch offset",
+    "shortDesc": "Pitch offset",
+    "range": [
+      0,
+      16383
+    ],
+    "default": 8192,
+    "zeroOffset": 8192
+  },
+  {
+    "id": 8195,
+    "path": "glideDurationMS",
+    "description": "Glide duration (ms)",
+    "shortDesc": "Glide",
+    "range": [
+      0,
+      16383
+    ],
+    "default": 0
+  },
+  {
+    "id": 8196,
+    "path": "velocityDepth",
+    "description": "Velocity depth",
+    "shortDesc": "Velocity depth",
+    "range": [
+      0,
+      127
+    ],
+    "default": 127
+  },
+  {
+    "id": 12288,
+    "path": "paramMaps[0].src",
+    "description": "Map 1 source",
+    "shortDesc": "Map 1 src",
+    "range": [
+      0,
+      255
+    ],
+    "default": 255
+  },
+  {
+    "id": 12289,
+    "path": "paramMaps[0].dest",
+    "description": "Map 1 destination",
+    "shortDesc": "Map 1 dest",
+    "range": [
+      0,
+      16383
+    ],
+    "default": 0
+  },
+  {
+    "id": 12290,
+    "path": "paramMaps[0].adjustAmount",
+    "description": "Map 1 adjustment amount",
+    "shortDesc": "Map 1 amount",
+    "range": [
+      0,
+      16383
+    ],
+    "default": 8192,
+    "zeroOffset": 8192
+  },
+  {
+    "id": 12291,
+    "path": "paramMaps[0].invertSrc",
+    "description": "Map 1 invert source",
+    "shortDesc": "Map 1 invert",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 12304,
+    "path": "paramMaps[1].src",
+    "description": "Map 2 source",
+    "shortDesc": "Map 2 src",
+    "range": [
+      0,
+      255
+    ],
+    "default": 255
+  },
+  {
+    "id": 12305,
+    "path": "paramMaps[1].dest",
+    "description": "Map 2 destination",
+    "shortDesc": "Map 2 dest",
+    "range": [
+      0,
+      16383
+    ],
+    "default": 0
+  },
+  {
+    "id": 12306,
+    "path": "paramMaps[1].adjustAmount",
+    "description": "Map 2 adjustment amount",
+    "shortDesc": "Map 2 amount",
+    "range": [
+      0,
+      16383
+    ],
+    "default": 8192,
+    "zeroOffset": 8192
+  },
+  {
+    "id": 12307,
+    "path": "paramMaps[1].invertSrc",
+    "description": "Map 2 invert source",
+    "shortDesc": "Map 2 invert",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 12320,
+    "path": "paramMaps[2].src",
+    "description": "Map 3 source",
+    "shortDesc": "Map 3 src",
+    "range": [
+      0,
+      255
+    ],
+    "default": 255
+  },
+  {
+    "id": 12321,
+    "path": "paramMaps[2].dest",
+    "description": "Map 3 destination",
+    "shortDesc": "Map 3 dest",
+    "range": [
+      0,
+      16383
+    ],
+    "default": 0
+  },
+  {
+    "id": 12322,
+    "path": "paramMaps[2].adjustAmount",
+    "description": "Map 3 adjustment amount",
+    "shortDesc": "Map 3 amount",
+    "range": [
+      0,
+      16383
+    ],
+    "default": 8192,
+    "zeroOffset": 8192
+  },
+  {
+    "id": 12323,
+    "path": "paramMaps[2].invertSrc",
+    "description": "Map 3 invert source",
+    "shortDesc": "Map 3 invert",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 12336,
+    "path": "paramMaps[3].src",
+    "description": "Map 4 source",
+    "shortDesc": "Map 4 src",
+    "range": [
+      0,
+      255
+    ],
+    "default": 255
+  },
+  {
+    "id": 12337,
+    "path": "paramMaps[3].dest",
+    "description": "Map 4 destination",
+    "shortDesc": "Map 4 dest",
+    "range": [
+      0,
+      16383
+    ],
+    "default": 0
+  },
+  {
+    "id": 12338,
+    "path": "paramMaps[3].adjustAmount",
+    "description": "Map 4 adjustment amount",
+    "shortDesc": "Map 4 amount",
+    "range": [
+      0,
+      16383
+    ],
+    "default": 8192,
+    "zeroOffset": 8192
+  },
+  {
+    "id": 12339,
+    "path": "paramMaps[3].invertSrc",
+    "description": "Map 4 invert source",
+    "shortDesc": "Map 4 invert",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 12544,
+    "path": "lfoParams[0].wave",
+    "description": "LFO 1 wave",
+    "shortDesc": "LFO 1 wave",
+    "range": [
+      0,
+      4
+    ],
+    "default": 0
+  },
+  {
+    "id": 12545,
+    "path": "lfoParams[0].periodMS",
+    "description": "LFO 1 period (ms)",
+    "shortDesc": "LFO 1 period",
+    "range": [
+      0,
+      16383
+    ],
+    "default": 0
+  },
+  {
+    "id": 12546,
+    "path": "lfoParams[0].sync",
+    "description": "LFO 1 sync",
+    "shortDesc": "LFO 1 sync",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 12547,
+    "path": "lfoParams[0].oneShot",
+    "description": "LFO 1 one shot",
+    "shortDesc": "LFO 1 one shot",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 12560,
+    "path": "lfoParams[1].wave",
+    "description": "LFO 2 wave",
+    "shortDesc": "LFO 2 wave",
+    "range": [
+      0,
+      4
+    ],
+    "default": 0
+  },
+  {
+    "id": 12561,
+    "path": "lfoParams[1].periodMS",
+    "description": "LFO 2 period (ms)",
+    "shortDesc": "LFO 2 period",
+    "range": [
+      0,
+      16383
+    ],
+    "default": 0
+  },
+  {
+    "id": 12562,
+    "path": "lfoParams[1].sync",
+    "description": "LFO 2 sync",
+    "shortDesc": "LFO 2 sync",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 12563,
+    "path": "lfoParams[1].oneShot",
+    "description": "LFO 2 one shot",
+    "shortDesc": "LFO 2 one shot",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  }
+]

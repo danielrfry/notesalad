@@ -1,0 +1,545 @@
+[
+  {
+    "id": 1,
+    "path": "fb",
+    "description": "Feedback",
+    "shortDesc": "Feedback",
+    "range": [
+      0,
+      7
+    ],
+    "default": 0
+  },
+  {
+    "id": 2,
+    "path": "conn",
+    "description": "Connection",
+    "shortDesc": "Connection",
+    "range": [
+      0,
+      7
+    ],
+    "default": 0
+  },
+  {
+    "id": 3,
+    "path": "pms",
+    "description": "Phase modulation sensitivity",
+    "shortDesc": "PM",
+    "range": [
+      0,
+      7
+    ],
+    "default": 0
+  },
+  {
+    "id": 4,
+    "path": "ams",
+    "description": "Amplitude modulation sensitivity",
+    "shortDesc": "AM",
+    "range": [
+      0,
+      7
+    ],
+    "default": 0
+  },
+  {
+    "id": 5,
+    "path": "opsEnabled",
+    "description": "Enabled operators",
+    "shortDesc": "Operators",
+    "range": [
+      0,
+      15
+    ],
+    "default": 15
+  },
+  {
+    "id": 16,
+    "path": "operators[0].dt1",
+    "description": "Operator 1 detune 1",
+    "shortDesc": "Op 1 detune 1",
+    "range": [
+      0,
+      7
+    ],
+    "default": 0
+  },
+  {
+    "id": 17,
+    "path": "operators[0].mul",
+    "description": "Operator 1 frequency multiplier",
+    "shortDesc": "Op 1 mult",
+    "range": [
+      0,
+      15
+    ],
+    "default": 1
+  },
+  {
+    "id": 18,
+    "path": "operators[0].tl",
+    "description": "Operator 1 total level",
+    "shortDesc": "Op 1 level",
+    "range": [
+      0,
+      127
+    ],
+    "default": 127,
+    "invert": true
+  },
+  {
+    "id": 19,
+    "path": "operators[0].ks",
+    "description": "Operator 1 key scaling",
+    "shortDesc": "Op 1 KS",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 20,
+    "path": "operators[0].ar",
+    "description": "Operator 1 attack rate",
+    "shortDesc": "Op 1 attack",
+    "range": [
+      0,
+      31
+    ],
+    "default": 31
+  },
+  {
+    "id": 21,
+    "path": "operators[0].amsen",
+    "description": "Operator 1 enable amplitude modulation",
+    "shortDesc": "Op 1 AM",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 22,
+    "path": "operators[0].d1r",
+    "description": "Operator 1 decay rate 1",
+    "shortDesc": "Op 1 D1R",
+    "range": [
+      0,
+      31
+    ],
+    "default": 0
+  },
+  {
+    "id": 23,
+    "path": "operators[0].dt2",
+    "description": "Operator 1 detune 2",
+    "shortDesc": "Op 1 detune 2",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 24,
+    "path": "operators[0].d2r",
+    "description": "Operator 1 decay rate 2",
+    "shortDesc": "Op 1 D2R",
+    "range": [
+      0,
+      31
+    ],
+    "default": 0
+  },
+  {
+    "id": 25,
+    "path": "operators[0].d1l",
+    "description": "Operator 1 decay level 1",
+    "shortDesc": "Op 1 D1L",
+    "range": [
+      0,
+      15
+    ],
+    "default": 0
+  },
+  {
+    "id": 26,
+    "path": "operators[0].rr",
+    "description": "Operator 1 release rate",
+    "shortDesc": "Op 1 RR",
+    "range": [
+      0,
+      15
+    ],
+    "default": 15
+  },
+  {
+    "id": 32,
+    "path": "operators[1].dt1",
+    "description": "Operator 2 detune 1",
+    "shortDesc": "Op 2 detune 1",
+    "range": [
+      0,
+      7
+    ],
+    "default": 0
+  },
+  {
+    "id": 33,
+    "path": "operators[1].mul",
+    "description": "Operator 2 frequency multiplier",
+    "shortDesc": "Op 2 mult",
+    "range": [
+      0,
+      15
+    ],
+    "default": 1
+  },
+  {
+    "id": 34,
+    "path": "operators[1].tl",
+    "description": "Operator 2 total level",
+    "shortDesc": "Op 2 level",
+    "range": [
+      0,
+      127
+    ],
+    "default": 127,
+    "invert": true
+  },
+  {
+    "id": 35,
+    "path": "operators[1].ks",
+    "description": "Operator 2 key scaling",
+    "shortDesc": "Op 2 KS",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 36,
+    "path": "operators[1].ar",
+    "description": "Operator 2 attack rate",
+    "shortDesc": "Op 2 attack",
+    "range": [
+      0,
+      31
+    ],
+    "default": 31
+  },
+  {
+    "id": 37,
+    "path": "operators[1].amsen",
+    "description": "Operator 2 enable amplitude modulation",
+    "shortDesc": "Op 2 AM",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 38,
+    "path": "operators[1].d1r",
+    "description": "Operator 2 decay rate 1",
+    "shortDesc": "Op 2 D1R",
+    "range": [
+      0,
+      31
+    ],
+    "default": 0
+  },
+  {
+    "id": 39,
+    "path": "operators[1].dt2",
+    "description": "Operator 2 detune 2",
+    "shortDesc": "Op 2 detune 2",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 40,
+    "path": "operators[1].d2r",
+    "description": "Operator 2 decay rate 2",
+    "shortDesc": "Op 2 D2R",
+    "range": [
+      0,
+      31
+    ],
+    "default": 0
+  },
+  {
+    "id": 41,
+    "path": "operators[1].d1l",
+    "description": "Operator 2 decay level 1",
+    "shortDesc": "Op 2 D1L",
+    "range": [
+      0,
+      15
+    ],
+    "default": 0
+  },
+  {
+    "id": 42,
+    "path": "operators[1].rr",
+    "description": "Operator 2 release rate",
+    "shortDesc": "Op 2 RR",
+    "range": [
+      0,
+      15
+    ],
+    "default": 15
+  },
+  {
+    "id": 48,
+    "path": "operators[2].dt1",
+    "description": "Operator 3 detune 1",
+    "shortDesc": "Op 3 detune 1",
+    "range": [
+      0,
+      7
+    ],
+    "default": 0
+  },
+  {
+    "id": 49,
+    "path": "operators[2].mul",
+    "description": "Operator 3 frequency multiplier",
+    "shortDesc": "Op 3 mult",
+    "range": [
+      0,
+      15
+    ],
+    "default": 1
+  },
+  {
+    "id": 50,
+    "path": "operators[2].tl",
+    "description": "Operator 3 total level",
+    "shortDesc": "Op 3 level",
+    "range": [
+      0,
+      127
+    ],
+    "default": 127,
+    "invert": true
+  },
+  {
+    "id": 51,
+    "path": "operators[2].ks",
+    "description": "Operator 3 key scaling",
+    "shortDesc": "Op 3 KS",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 52,
+    "path": "operators[2].ar",
+    "description": "Operator 3 attack rate",
+    "shortDesc": "Op 3 attack",
+    "range": [
+      0,
+      31
+    ],
+    "default": 31
+  },
+  {
+    "id": 53,
+    "path": "operators[2].amsen",
+    "description": "Operator 3 enable amplitude modulation",
+    "shortDesc": "Op 3 AM",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 54,
+    "path": "operators[2].d1r",
+    "description": "Operator 3 decay rate 1",
+    "shortDesc": "Op 3 D1R",
+    "range": [
+      0,
+      31
+    ],
+    "default": 0
+  },
+  {
+    "id": 55,
+    "path": "operators[2].dt2",
+    "description": "Operator 3 detune 2",
+    "shortDesc": "Op 3 detune 2",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 56,
+    "path": "operators[2].d2r",
+    "description": "Operator 3 decay rate 2",
+    "shortDesc": "Op 3 D2R",
+    "range": [
+      0,
+      31
+    ],
+    "default": 0
+  },
+  {
+    "id": 57,
+    "path": "operators[2].d1l",
+    "description": "Operator 3 decay level 1",
+    "shortDesc": "Op 3 D1L",
+    "range": [
+      0,
+      15
+    ],
+    "default": 0
+  },
+  {
+    "id": 58,
+    "path": "operators[2].rr",
+    "description": "Operator 3 release rate",
+    "shortDesc": "Op 3 RR",
+    "range": [
+      0,
+      15
+    ],
+    "default": 15
+  },
+  {
+    "id": 64,
+    "path": "operators[3].dt1",
+    "description": "Operator 4 detune 1",
+    "shortDesc": "Op 4 detune 1",
+    "range": [
+      0,
+      7
+    ],
+    "default": 0
+  },
+  {
+    "id": 65,
+    "path": "operators[3].mul",
+    "description": "Operator 4 frequency multiplier",
+    "shortDesc": "Op 4 mult",
+    "range": [
+      0,
+      15
+    ],
+    "default": 1
+  },
+  {
+    "id": 66,
+    "path": "operators[3].tl",
+    "description": "Operator 4 total level",
+    "shortDesc": "Op 4 level",
+    "range": [
+      0,
+      127
+    ],
+    "default": 0,
+    "invert": true
+  },
+  {
+    "id": 67,
+    "path": "operators[3].ks",
+    "description": "Operator 4 key scaling",
+    "shortDesc": "Op 4 KS",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 68,
+    "path": "operators[3].ar",
+    "description": "Operator 4 attack rate",
+    "shortDesc": "Op 4 attack",
+    "range": [
+      0,
+      31
+    ],
+    "default": 31
+  },
+  {
+    "id": 69,
+    "path": "operators[3].amsen",
+    "description": "Operator 4 enable amplitude modulation",
+    "shortDesc": "Op 4 AM",
+    "range": [
+      0,
+      1
+    ],
+    "default": 0
+  },
+  {
+    "id": 70,
+    "path": "operators[3].d1r",
+    "description": "Operator 4 decay rate 1",
+    "shortDesc": "Op 4 D1R",
+    "range": [
+      0,
+      31
+    ],
+    "default": 0
+  },
+  {
+    "id": 71,
+    "path": "operators[3].dt2",
+    "description": "Operator 4 detune 2",
+    "shortDesc": "Op 4 detune 2",
+    "range": [
+      0,
+      3
+    ],
+    "default": 0
+  },
+  {
+    "id": 72,
+    "path": "operators[3].d2r",
+    "description": "Operator 4 decay rate 2",
+    "shortDesc": "Op 4 D2R",
+    "range": [
+      0,
+      31
+    ],
+    "default": 0
+  },
+  {
+    "id": 73,
+    "path": "operators[3].d1l",
+    "description": "Operator 4 decay level 1",
+    "shortDesc": "Op 4 D1L",
+    "range": [
+      0,
+      15
+    ],
+    "default": 0
+  },
+  {
+    "id": 74,
+    "path": "operators[3].rr",
+    "description": "Operator 4 release rate",
+    "shortDesc": "Op 4 RR",
+    "range": [
+      0,
+      15
+    ],
+    "default": 15
+  }
+]
