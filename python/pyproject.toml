@@ -5,3 +5,4 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "notesalad"
 dynamic = ["version", "description"]
+dependencies = ["pydash >=6.0.0"]
