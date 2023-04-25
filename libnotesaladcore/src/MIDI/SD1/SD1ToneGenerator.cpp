@@ -21,6 +21,7 @@ SD1ToneGenerator::SD1ToneGenerator(SD1DeviceBase* device) : device(device)
         this->device->writeReg(0x11, 0x01); // XVB
         this->device->writeReg(0x12, 0x08); // INT/FRAC
     }
+    this->writeTones(15);
 }
 
 void SD1ToneGenerator::reset(bool hardReset)
