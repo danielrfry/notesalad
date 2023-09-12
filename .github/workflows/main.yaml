@@ -25,6 +25,8 @@ jobs:
   build-web:
     name: Build web
     runs-on: ubuntu-20.04
+    env:
+      NTSLD_EMSDK_VERSION: 3.1.41
     steps:
       - name: Check out notesalad
         uses: actions/checkout@v3
@@ -36,10 +38,10 @@ jobs:
         with:
           repository: emscripten-core/emsdk
           path: emsdk
-      - name: Install latest emsdk
-        run: cd emsdk && ./emsdk install latest
-      - name: Activate latest emsdk
-        run: cd emsdk && ./emsdk activate latest
+      - name: Install emsdk
+        run: cd emsdk && ./emsdk install "$NTSLD_EMSDK_VERSION"
+      - name: Activate emsdk
+        run: cd emsdk && ./emsdk activate "$NTSLD_EMSDK_VERSION"
       - name: Build npm package
         run: source emsdk/emsdk_env.sh && cd notesalad/web && npm install && npm run build
       - name: Set up npmrc
