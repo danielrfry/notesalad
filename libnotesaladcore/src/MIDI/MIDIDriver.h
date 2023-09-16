@@ -139,6 +139,10 @@ public:
     {
         this->toneController.setPitchWheel(channel, value);
     }
+    virtual void setChannelDrumMode(uint8_t channel, bool enabled)
+    {
+        this->toneController.setChannelDrumMode(channel, enabled);
+    }
     virtual void update()
     {
         this->monoNoteManager.update();
@@ -406,7 +410,7 @@ private:
             auto channel = msg->getChannel();
             auto drumMode = msg->getDrumMode();
             if (channel < 16) {
-                this->toneController.setChannelDrumMode(channel, drumMode);
+                this->setChannelDrumMode(channel, drumMode);
             }
         }
     }

@@ -14,5 +14,6 @@ public:
     virtual void controlChange(uint8_t channel, uint8_t control, uint8_t value) = 0;
     virtual void sysEx(uint8_t* data, unsigned int length) = 0;
     virtual void pitchWheel(uint8_t channel, uint16_t value) = 0;
+    virtual void setChannelDrumMode(uint8_t channel, bool enabled) = 0;
     virtual void update() = 0;
 };
