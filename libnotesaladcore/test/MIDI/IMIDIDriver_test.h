@@ -13,5 +13,6 @@ public:
     MOCK_METHOD(void, controlChange, (uint8_t channel, uint8_t control, uint8_t value), (override));
     MOCK_METHOD(void, sysEx, (uint8_t * data, unsigned int length), (override));
     MOCK_METHOD(void, pitchWheel, (uint8_t channel, uint16_t value), (override));
+    MOCK_METHOD(void, setChannelDrumMode, (uint8_t channel, bool enabled), (override));
     MOCK_METHOD(void, update, (), (override));
 };
