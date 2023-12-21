@@ -3,12 +3,11 @@
 __version__ = "0.5.0"
 
 from ctypes import c_int, cdll, CFUNCTYPE, c_bool, c_void_p, c_ushort, c_ubyte, c_uint
+from ctypes.util import find_library
 import sys
 
-if sys.platform == 'darwin':
-    _lib = cdll.LoadLibrary('libnotesalad.dylib')
-else:
-    _lib = cdll.LoadLibrary('libnotesalad.so')
+_lib_path = find_library('notesalad')
+_lib = cdll.LoadLibrary(_lib_path)
 
 # Integer types
 c_uint32_t = c_uint
