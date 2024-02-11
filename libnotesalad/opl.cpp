@@ -33,6 +33,11 @@ void ntsld_opl_emu_getsamples(OPLDeviceRef device, int16_t* output, int numSampl
     dynamic_cast<OPLEmulator*>((OPLDeviceBase*)device)->getSamples(output, numSamples);
 }
 
+void ntsld_opl_emu_getsamples_offset(OPLDeviceRef device, int16_t* output, int offsetSamples, int numSamples)
+{
+    ntsld_opl_emu_getsamples(device, output + (offsetSamples * 2), numSamples);
+}
+
 OPL2MIDIRef ntsld_opl2midi_new(void* context, OPLDeviceRef device)
 {
     return dynamic_cast<IMIDIManager*>(new OPL2MIDIManager(context, (OPLDeviceBase*)device));

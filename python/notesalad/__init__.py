@@ -54,6 +54,9 @@ _lib.ntsld_opl_write.restype = None
 
 _lib.ntsld_opl_emu_getsamples.argtypes = (OPLDeviceRef, c_void_p, c_int)
 _lib.ntsld_opl_emu_getsamples.restype = None
+_lib.ntsld_opl_emu_getsamples_offset.argtypes = (
+    OPLDeviceRef, c_void_p, c_int, c_int)
+_lib.ntsld_opl_emu_getsamples_offset.restype = None
 
 _lib.ntsld_opl2midi_new.argtypes = (c_void_p, OPLDeviceRef)
 _lib.ntsld_opl2midi_new.restype = MIDIRef
@@ -88,6 +91,9 @@ _lib.ntsld_opm_write.restype = None
 
 _lib.ntsld_opm_emu_getsamples.argtypes = (OPMDeviceRef, c_void_p, c_int)
 _lib.ntsld_opm_emu_getsamples.restype = None
+_lib.ntsld_opm_emu_getsamples_offset.argtypes = (
+    OPMDeviceRef, c_void_p, c_int, c_int)
+_lib.ntsld_opm_emu_getsamples_offset.restype = None
 
 _lib.ntsld_opmmidi_new.argtypes = (c_void_p, OPMDeviceRef)
 _lib.ntsld_opmmidi_new.restype = OPMMIDIRef

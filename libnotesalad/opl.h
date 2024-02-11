@@ -18,6 +18,7 @@ extern "C" {
     void ntsld_opl_write(OPLDeviceRef device, uint16_t addr, uint8_t data);
 
     void ntsld_opl_emu_getsamples(OPLDeviceRef device, int16_t* output, int numSamples);
+    void ntsld_opl_emu_getsamples_offset(OPLDeviceRef device, int16_t* output, int offsetSamples, int numSamples);
 
     OPL2MIDIRef ntsld_opl2midi_new(void* context, OPLDeviceRef device);
     OPL3MIDIRef ntsld_opl3midi_new(void* context, OPLDeviceRef device);

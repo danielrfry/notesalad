@@ -17,6 +17,7 @@ extern "C" {
     void ntsld_opm_write(OPMDeviceRef device, uint8_t addr, uint8_t data);
 
     void ntsld_opm_emu_getsamples(OPMDeviceRef device, int16_t* output, int numSamples);
+    void ntsld_opm_emu_getsamples_offset(OPMDeviceRef device, int16_t* output, int offsetSamples, int numSamples);
 
     OPMMIDIRef ntsld_opmmidi_new(void* context, OPMDeviceRef device);
 }
