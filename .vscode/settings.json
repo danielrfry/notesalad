@@ -1,6 +1,4 @@
 {
-  "python.linting.pylintEnabled": true,
-  "python.linting.enabled": true,
   "python.pythonPath": "./pyfm/env/bin/python",
   "editor.formatOnSave": true,
 "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
