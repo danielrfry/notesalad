@@ -8,7 +8,7 @@ SD1MIDIManager::SD1MIDIManager(void* context, SD1DeviceBase* device)
 
 void SD1MIDIManager::reset()
 {
-    // Not currently implemented
+    this->midiSystem.midiDriver.reset(true);
 }
 
 void SD1MIDIManager::setReceiveCallback(std::function<void(void*, uint32_t)> callback)

@@ -8,6 +8,7 @@ OPL3MIDIManager::OPL3MIDIManager(void* context, OPLDeviceBase* device)
 
 void OPL3MIDIManager::reset()
 {
+    this->midiSystem.midiDriver.reset(true);
 }
 
 void OPL3MIDIManager::setReceiveCallback(std::function<void(void*, uint32_t)> callback)

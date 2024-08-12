@@ -8,6 +8,7 @@ OPMMIDIManager::OPMMIDIManager(void* context, OPMDeviceBase* device)
 
 void OPMMIDIManager::reset()
 {
+    this->midiSystem.midiDriver.reset(true);
 }
 
 void OPMMIDIManager::setReceiveCallback(std::function<void(void*, uint32_t)> callback)
