@@ -2,7 +2,6 @@
 
 BufferedOPLDevice::BufferedOPLDevice(OPLDeviceBase* baseDevice) : baseDevice(baseDevice)
 {
-    this->baseDevice->softReset();
 }
 
 void BufferedOPLDevice::hardReset()
