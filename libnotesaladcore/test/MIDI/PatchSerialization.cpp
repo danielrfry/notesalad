@@ -100,7 +100,7 @@ bool comparePatches(Patch<TestTone>& a, Patch<TestTone>& b)
 TEST(DeserializationTest, DeserializesDefaultPatch)
 {
     Patch<TestTone> expectedPatch;
-    uint8_t backingStore;
+    uint8_t backingStore = 0;
     BufferReader reader(&backingStore, 0);
     Patch<TestTone> deserializedPatch;
 
