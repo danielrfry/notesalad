@@ -2,6 +2,7 @@
 
 #include <cstring>
 #include <notesaladcore.h>
+#include <vector>
 
 using namespace testing;
 
@@ -122,11 +123,11 @@ TEST(Encoding7BitTest, Calculates7BitDecodedSize)
 
 std::string hexDump(const uint8_t* input, size_t len)
 {
-    char buffer[3 * len + 1];
+    std::vector<char> buffer(3 * len + 1);
     for (size_t i = 0; i < len; i++) {
         snprintf(&buffer[i * 3], 4, "%02x ", input[i]);
     }
-    return std::string(buffer);
+    return std::string(buffer.data());
 }
 
 TEST(Encoding7BitTest, Encodes7Bit)
