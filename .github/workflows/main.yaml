@@ -10,10 +10,10 @@ on:
 jobs:
   build-desktop:
     name: Build & test desktop
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Check out
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           submodules: recursive
       - name: Configure
@@ -24,17 +24,17 @@ jobs:
         run: cd build && make -j `nproc --all` libnotesaladcore_test && ctest
   build-web:
     name: Build web
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     env:
-      NTSLD_EMSDK_VERSION: 3.1.41
+      NTSLD_EMSDK_VERSION: 4.0.22
     steps:
       - name: Check out notesalad
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           submodules: recursive
           path: notesalad
       - name: Check out emsdk
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           repository: emscripten-core/emsdk
           path: emsdk
