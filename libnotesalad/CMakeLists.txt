@@ -105,7 +105,7 @@ add_library(ymfm STATIC
     ymfm/src/ymfm_adpcm.cpp
     ymfm/src/ymfm_opm.cpp
 )
-target_compile_options(ymfm PRIVATE -Wno-deprecated-declarations -fPIC)
+target_compile_options(ymfm PRIVATE -Wno-deprecated-declarations -fPIC -Wno-error=array-bounds)
 
 target_link_libraries(notesalad PUBLIC notesaladcore ymfm)
 target_include_directories(notesalad
