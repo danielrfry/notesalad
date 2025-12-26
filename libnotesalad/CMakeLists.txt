@@ -53,7 +53,8 @@ if (WASM)
                 getValue, \
                 setValue, \
                 addFunction, \
-                removeFunction \
+                removeFunction, \
+                HEAPU8 \
             ]' \
             -s RESERVED_FUNCTION_POINTERS=20"
     )
